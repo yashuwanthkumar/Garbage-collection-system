@@ -1,0 +1,54 @@
+GARBAGE COLLECTION SYSTEM - SETUP GUIDE
+=====================================
+
+PREREQUISITES:
+--------------
+1. Install XAMPP or WAMP server on your Windows machine
+2. Start Apache and MySQL services
+
+DATABASE SETUP:
+---------------
+1. Open phpMyAdmin (usually at http://localhost/phpmyadmin)
+2. Create a new database named "garbagemsdb"
+3. Import the database_setup.sql file to create all required tables
+4. The default admin login is username: admin, password: admin
+
+DATABASE STRUCTURE:
+-----------------
+The database_setup.sql file will create the following tables:
+- tbladmin (for admin login)
+- tblpage (for page content like contact us, about us)
+- tbluser (for user accounts)
+- tbldriver (for driver accounts)
+
+FILE SETUP:
+----------
+1. Copy the entire "gms" folder to your web server directory:
+   - For XAMPP: xampp\htdocs\
+   - For WAMP: wamp\www\
+2. Access the system through your browser at http://localhost/gms/
+
+DEFAULT LOGIN:
+-------------
+Admin Panel: http://localhost/gms/admin/login.php
+- Username: admin
+- Password: admin
+
+Driver Panel: http://localhost/gms/driver/login.php
+User Panel: http://localhost/gms/user/login.php
+
+(Note: You'll need to register as a driver or user, or manually add records to the respective tables)
+
+DATABASE CONFIGURATION:
+----------------------
+The database settings are in includes/dbconnection.php:
+- Host: localhost
+- Username: root
+- Password: (empty)
+- Database: garbagemsdb
+
+To run the project:
+1. Make sure XAMPP/WAMP is installed and running
+2. Place these files in your web server directory
+3. Create the database and import database_setup.sql
+4. Visit http://localhost/gms/ in your browser
